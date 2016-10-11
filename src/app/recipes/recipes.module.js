@@ -8,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var recipes_component_1 = require("./recipes.component");
 var recipe_list_component_1 = require("./recipe-list/recipe-list.component");
-var recipe_item_component_1 = require("./recipe-list/recipe-item.component");
+var recipe_item_component_1 = require("./recipe-item/recipe-item.component");
+var recipe_detail_component_1 = require("./recipe-detail/recipe-detail.component");
+var common_1 = require("@angular/common");
 var RecipeModule = (function () {
     function RecipeModule() {
     }
@@ -17,13 +19,17 @@ var RecipeModule = (function () {
             declarations: [
                 recipes_component_1.RecipesComponent,
                 recipe_list_component_1.RecipeListComponent,
-                recipe_item_component_1.RecipeItemComponent
+                recipe_item_component_1.RecipeItemComponent,
+                recipe_detail_component_1.RecipeDetailComponent
             ],
-            imports: [],
+            imports: [
+                common_1.CommonModule
+            ],
             exports: [
                 recipes_component_1.RecipesComponent,
                 recipe_list_component_1.RecipeListComponent,
-                recipe_item_component_1.RecipeItemComponent
+                recipe_item_component_1.RecipeItemComponent,
+                recipe_detail_component_1.RecipeDetailComponent
             ],
             providers: []
         })

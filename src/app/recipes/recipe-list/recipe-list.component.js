@@ -9,11 +9,19 @@ var core_1 = require('@angular/core');
 var recipe_1 = require("../recipe");
 var RecipeListComponent = (function () {
     function RecipeListComponent() {
-        this.recipes = [];
-        this.recipe = new recipe_1.Recipe('Dummy', 'Dummy', 'http://i227.photobucket.com/albums/dd278/cgill297/Lasagna.jpg');
+        this.recipes = [
+            new recipe_1.Recipe('Lasagna', 'delicious', 'http://i227.photobucket.com/albums/dd278/cgill297/Lasagna.jpg', []),
+            new recipe_1.Recipe('Schnitzel', 'Very tasty', 'http://images.derberater.de/files/imagecache/456xXXX_berater/berater/slides/WienerSchnitzel.jpg', []),
+            new recipe_1.Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])
+        ];
+        this.recipeSelected = new core_1.EventEmitter();
     }
-    RecipeListComponent.prototype.ngOnInit = function () {
+    RecipeListComponent.prototype.onSelected = function (recipe) {
+        this.recipeSelected.emit(recipe);
     };
+    __decorate([
+        core_1.Output()
+    ], RecipeListComponent.prototype, "recipeSelected");
     RecipeListComponent = __decorate([
         core_1.Component({
             selector: 'rb-recipe-list',

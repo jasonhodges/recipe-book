@@ -10,10 +10,12 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var header_component_1 = require("./header.component");
+var header_component_1 = require("./shared/header/header.component");
 var recipes_module_1 = require("./recipes/recipes.module");
 var shopping_list_module_1 = require("./shopping-list/shopping-list.module");
 var dropdown_directive_1 = require("./shared/directives/dropdown.directive");
+var recipe_service_1 = require("./recipes/recipe.service");
+var shopping_list_service_1 = require("./shopping-list/shopping-list.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,7 +33,10 @@ var AppModule = (function () {
                 recipes_module_1.RecipeModule,
                 shopping_list_module_1.ShoppingListModule
             ],
-            providers: [],
+            providers: [
+                recipe_service_1.RecipeService,
+                shopping_list_service_1.ShoppingListService
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
